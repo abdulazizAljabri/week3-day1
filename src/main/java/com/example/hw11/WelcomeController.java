@@ -9,13 +9,11 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping(path = "/Welcome")
 public class WelcomeController {
-    ArrayList <String> users = new ArrayList<String>();
+
     @GetMapping(path = "/name")
     public String name(){
-        users.add("Abdulaziz");
-        users.add("Ail");
-        users.add("Mohammad");
-        return " My name is : "+users.get(0);
+
+        return " My name is : Abdulaziz ";
     }
 
     @GetMapping(path = "/age")
@@ -30,9 +28,11 @@ public class WelcomeController {
     public String health(){
         return "Server health is up and running";
     }
+
     @GetMapping(path = "/names")
-    public String list(){
-        return "List of names : "+users;
+    public String [] list(){
+        String [] list = {"abdulaziz","ail ", "mohammed"};
+        return list;
     }
 
 }
